@@ -1,0 +1,24 @@
+##服务端口号
+server:
+  port: 8000
+###服务的别名---服务到注册中心的名称
+spring:
+  application:
+    name: app-lhz-member
+eureka:
+  client:
+    service-url:
+      ##注册中心地址注册到地址
+      defaultZone:  http://localhost:8100/eureka/
+    ##需要注册
+    register-with-eureka: true
+    ##检索服务
+    fetch-registry: true
+  #心跳检测与续约时间, 本地开发时使用
+  #测试时值设置小点保证 关闭后注册中心能及时剔除服务
+  instance:
+    ###eureka客户端向注册中心发送服务的心跳间隔，单位为秒（告诉服务器会按照次规则）
+    lease-renewal-interval-in-seconds: 1
+    ##eureka服务端在最后一次心跳收到等待时间上限 单位为秒 超过剔除
+    lease-expiration-duration-in-seconds: 2
+
