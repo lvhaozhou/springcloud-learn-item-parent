@@ -63,6 +63,19 @@ public class OrderServiceImpl extends BaseApiService implements IOrderService {
     }
 
 
+    /**
+     * 功能描述:Hystrix 第二种写法 使用类的方式（一般使用这种方式）
+     * @param:
+     * @return:
+     * @auther: lhz
+     * @date: 2019/12/20 0020 下午 2:42
+     */
+    @RequestMapping("/orderToMemberInfoHystrix_demo2")
+    public ResponseBase orderToMemberInfoHystrixDemo2() {
+        System.out.println("orderToMemberInfoHystrix: 线程池名称 = " + Thread.currentThread().getName());
+        return memberServiceFeign.getUserInfo();
+    }
+
     //订单服务接口
     @RequestMapping("/orderInfo")
     @Override

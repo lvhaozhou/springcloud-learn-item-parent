@@ -1,6 +1,7 @@
 package com.lhz.learnitem.feign;
 
 import com.lhz.leanitem.api.service.IMemberService;
+import com.lhz.learnitem.fallback.MemberFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**
@@ -9,7 +10,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @Description: 会员项目feign 接口
  * @Version: 1.0
  */
-@FeignClient(name = "app-lhz-member")
+@FeignClient(name = "app-lhz-member",fallback = MemberFallback.class)
 public interface MemberServiceFeign extends IMemberService {
 
 }

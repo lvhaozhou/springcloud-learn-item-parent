@@ -24,9 +24,9 @@ ribbon:
   ### 指建立连接后从服务器读取所用的时间
   ConnectTimeout: 5000
 
-###开启hystrix断路器
+###开启hystrix断路器 默认是关闭的 第一种注解是可以使用 类不能使用
 feign:
-  hystrux:
+  hystrix:
     enabled: true
 
 ###hystrix 禁止超时时间
@@ -38,7 +38,7 @@ hystrix:
         ###enabled: false
         isolation:
           thread:
-            timeoutInMilliseconds: 3000
+            timeoutInMilliseconds: 1000
 
 
 
