@@ -13,6 +13,7 @@
       <module>springcloud-learnitem-member-service-impl</module>
       <module>springcloud-learnitem-order-service-impl</module>
         <module>springcloud-learnitem-common</module>
+      <module>springcloud-learnitem-config</module>
     </modules>
 
   <parent>

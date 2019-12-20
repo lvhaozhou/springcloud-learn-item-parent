@@ -1,0 +1,24 @@
+##服务端口号
+server:
+  port: 8888
+###服务的别名---服务到注册中心的名称
+spring:
+  application:
+    name: app-lhz-config-server
+  cloud:
+    config:
+      server:
+        ###config-server 读取git环境地址
+        git:
+          uri: git地址
+          search-paths:
+          ###分支地址
+          - config
+      ###环境
+      label: master
+eureka:
+  client:
+    service-url:
+      ##注册中心地址注册到地址
+      defaultZone:  http://localhost:8100/eureka/
+
